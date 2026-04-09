@@ -1,0 +1,429 @@
+/* Resets e Configurações Globais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #fafafa;
+    overflow-x: hidden; /* Garante que animações laterais não criem barra de rolagem */
+}
+
+/* Aplica uma transição base suave em todos os elementos interativos */
+a, button, .card, .doctor-card, .btn, .hover-btn, img, .details-inner, .tag {
+    transition: all 0.4s ease-in-out;
+}
+
+/* --- NOVAS CLASSES DE ANIMAÇÃO NO SCROLL --- */
+/* Estado inicial: invisível e um pouco abaixo */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); /* Efeito 'OutQuint' para suavidade premium */
+    will-change: transform, opacity; /* Otimização de performance */
+}
+
+/* Estado final: visível e no lugar correto */
+.hidden-element.animate-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Atrasos (delays) opcionais para elementos em sequência */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    background: transparent;
+    z-index: 1000;
+    transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+}
+
+.navbar.scrolled {
+    background: rgba(13, 30, 48, 0.96);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 15px 60px;
+}
+
+.logo img {
+    height: 45px;
+    object-fit: contain;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px 24px;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.navbar nav a.active {
+    background: rgba(255, 255, 255, 0.25);
+    font-weight: 500;
+}
+
+.navbar nav a:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%, #204064 0%, #0d1e30 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 6vw, 80px);
+    font-weight: 900;
+    margin: 0 0 25px 0;
+    letter-spacing: -1.5px;
+    line-height: 1;
+}
+
+.hero p {
+    max-width: 850px;
+    margin: 0 auto 40px auto;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    background: #1a416b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #23568a;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+}
+
+/* CARDS DE FEATURES */
+.features {
+    padding: 100px 60px;
+    background: #fafafa;
+    text-align: center;
+}
+
+/* Animação do título da seção */
+.features h2 {
+    font-size: clamp(2rem, 4vw, 42px);
+    color: #1a416b;
+    font-weight: 800;
+    margin: 0 0 50px 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: #0d1e30;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.card p {
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* --- SEÇÃO PROFISSIONAIS --- */
+.professionals-section {
+    padding: 100px 60px 150px 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section-header {
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(26, 65, 107, 0.05);
+    color: #1a416b;
+    border: 1px solid rgba(26, 65, 107, 0.1);
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: clamp(2.5rem, 5vw, 56px);
+    color: #1a416b;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0 0 20px 0;
+    letter-spacing: -1px;
+}
+
+.section-header p {
+    color: #64748b;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.doctor-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* O Card do Médico */
+.doctor-card {
+    position: relative;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.doctor-card:hover:not(.active) {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* A Imagem e o Overlay */
+.card-image-wrapper {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #e2e8f0;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease-in-out;
+}
+
+.doctor-card:hover:not(.active) .card-image-wrapper img {
+    transform: scale(1.08);
+}
+
+.gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13, 30, 48, 0.95) 0%, rgba(13, 30, 48, 0.4) 40%, transparent 100%);
+    pointer-events: none;
+}
+
+.doctor-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    color: white;
+}
+
+.doctor-info .title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #93c5fd;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.doctor-info h3 {
+    font-size: 22px;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.doctor-info .subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin: 0;
+}
+
+/* Botão Hover "Ver Perfil" */
+.hover-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.doctor-card:hover:not(.active) .hover-btn {
+    opacity: 1;
+}
+
+.hover-btn span {
+    background: rgba(255,255,255,0.95);
+    color: #1a416b;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    backdrop-filter: blur(4px);
+}
+
+/* Expansão das Especialidades (Acordeão) */
+.doctor-details {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.doctor-card.active .doctor-details {
+    grid-template-rows: 1fr;
+}
+
+.details-content {
+    overflow: hidden;
+}
+
+.details-inner {
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    margin-top: 15px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s; /* Atraso para o conteúdo surgir após abrir */
+}
+
+.doctor-card.active .details-inner {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: #f1f5f9;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, transform 0.3s;
+}
+
+.close-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    transform: rotate(90deg);
+}
+
+.details-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: rgba(26, 65, 107, 0.05);
+    color: #1a416b;
+    border: 1px solid rgba(26, 65, 107, 0.1);
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.tag:hover {
+    background: rgba(26, 65, 107, 0.1);
+    transform: translateY(-2px);
+}
+
+.bio {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
