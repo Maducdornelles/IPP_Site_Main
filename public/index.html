@@ -6,7 +6,7 @@
     <title>IPP Digital</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@500;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -24,153 +24,120 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>IPP DIGITAL</h1>
-            <p>
+            <h1 class="hidden-element">IPP DIGITAL</h1>
+            
+            <p class="hidden-element delay-1">
                 O Instituto de Psiquiatria e Psicoterapia (IPP) é referência em saúde mental, 
                 oferecendo atendimento especializado, humanizado e baseado em evidências, 
                 promovendo o desenvolvimento pessoal, equilíbrio emocional e qualidade de vida.
             </p>
-            <a href="#profissionais" class="btn">
-                Conheça Nossos Profissionais &rarr;
+            
+            <a href="#profissionais" class="btn hidden-element delay-2">
+                Conheça Nossos Profissionais 
             </a>
         </div>
     </section>
 
     <section class="features">
-        <h2>Por que escolher nós</h2>
+        <h2>Por que nos escolher?</h2>
         <div class="cards">
-            <div class="card">
+            <div class="card hidden-element delay-1">
                 <h3>Excelência Clínica</h3>
                 <p>Equipe altamente qualificada.</p>
             </div>
-            <div class="card">
+            <div class="card hidden-element delay-2">
                 <h3>Cuidado Humanizado</h3>
                 <p>Atendimento personalizado.</p>
             </div>
-            <div class="card">
-                <h3>Tecnologia Avançada</h3>
-                <p>Equipamentos modernos.</p>
+            <div class="card hidden-element delay-3">
+                <h3>Medicina de Evidência</h3>
+                <p>Tratamentos seguros e validados pelo que há de mais atual na ciência.</p>
             </div>
         </div>
     </section>
 
     <section id="profissionais" class="professionals-section">
         <div class="section-header">
-            <span class="badge">Nossa Equipe</span>
-            <h2>Nossos<br>Profissionais</h2>
-            <p>Conheça os especialistas que fazem a diferença na vida de nossos pacientes. Clique em cada médico para ver suas especializações.</p>
+            <span class="badge hidden-element">Nossa Equipe</span>
+            <h2 class="hidden-element">Nossos<br>Profissionais</h2>
+            <p class="hidden-element">Conheça os especialistas que fazem a diferença na vida de nossos pacientes. Clique em cada médico para ver suas especializações.</p>
         </div>
 
         <div class="doctor-grid-modern" id="doctorGrid">
             
-            <div class="doctor-card" onclick="toggleDoctor(this)">
+            <div class="doctor-card hidden-element delay-1" onclick="toggleDoctor(this)">
                 <div class="card-image-wrapper">
-                    <img src="assets/medico1.png" alt="Dr. Ricardo Almeida">
+                    <img src="assets/medico1.png" alt="Dr. José Ribmar Fernandes Saraiva Junior">
                     <div class="gradient-overlay"></div>
                     <div class="hover-btn"><span>Ver Perfil</span></div>
                     <div class="doctor-info">
-                        <span class="title">Cardiologista</span>
-                        <h3>Dr. Ricardo Almeida</h3>
-                        <p class="subtitle">CRM 12345 · 20 anos de exp.</p>
+                        <span class="title">Psiquiatra & Med. de Família</span>
+                        <h3>Dr. José Ribmar Saraiva Jr.</h3>
+                        <p class="subtitle">CRM RS 29349 RQE 30038</p>
                     </div>
                 </div>
+                
                 <div class="doctor-details">
                     <div class="details-content">
                         <div class="details-inner">
                             <button class="close-btn" onclick="closeDoctor(event, this)">✕</button>
+                            
                             <span class="details-title">ESPECIALIZAÇÕES</span>
                             <div class="specialties">
-                                <span class="tag">❤️ Cardiologia</span>
-                                <span class="tag">🫀 Cirurgia Cardíaca</span>
-                                <span class="tag">🩸 Hemodinâmica</span>
+                                <span class="tag"> Psiquiatria (ABP)</span>
+                                <span class="tag"> Terapia Cognitivo-Comportamental</span>
+                                <span class="tag"> Medicina de Família</span>
+                                <span class="tag">Envelhecimento Humano</span>
+                                <span class="tag">Dependência Química</span>
                             </div>
-                            <p class="bio">Especialista em cardiologia intervencionista com mais de 5.000 procedimentos realizados. Formado pela USP com fellowship no Cleveland Clinic.</p>
+                            
+                            <p class="bio">
+                                Mestre em Envelhecimento Humano (UPF) e especialista em Psiquiatria pela ABP. Com sólida formação pela PUCRS e UNIFESP, possui vasta experiência em Hospital Geral, clínica privada e docência, unindo o olhar da Medicina de Família à Saúde Mental.
+                            </p>
+
+                            <a href="https://wa.me/55SEUNUMERO" target="_blank" onclick="event.stopPropagation()" style="display: inline-flex; align-items: center; color: #25D366; text-decoration: none; font-weight: bold; gap: 8px; margin-top: 15px;">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px;">
+                                Agendar Consulta
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="doctor-card" onclick="toggleDoctor(this)">
+            </div> <div class="doctor-card hidden-element delay-2" onclick="toggleDoctor(this)">
                 <div class="card-image-wrapper">
-                    <img src="assets/medico2.png" alt="Dra. Marina Costa">
+                    <img src="assets/medico2.png" alt="Médico Psiquiatra">
                     <div class="gradient-overlay"></div>
                     <div class="hover-btn"><span>Ver Perfil</span></div>
                     <div class="doctor-info">
-                        <span class="title">Dermatologista</span>
-                        <h3>Dra. Marina Costa</h3>
-                        <p class="subtitle">CRM 23456 · 15 anos de exp.</p>
+                        <span class="title">Psiquiatra Intervencionista</span>
+                        <h3>Dr. Eduardo Antonio Tedeschi</h3> 
+                        <p class="subtitle">CRM RS 34789 RQE 32702</p>
                     </div>
                 </div>
+                
                 <div class="doctor-details">
                     <div class="details-content">
                         <div class="details-inner">
                             <button class="close-btn" onclick="closeDoctor(event, this)">✕</button>
+                            
                             <span class="details-title">ESPECIALIZAÇÕES</span>
                             <div class="specialties">
-                                <span class="tag">✨ Dermatologia</span>
-                                <span class="tag">💎 Dermatologia Estética</span>
+                                <span class="tag"> Psiquiatria Geral</span>
+                                <span class="tag">Neuromodulação</span>
+                                <span class="tag">Psiquiatria Intervencionista</span>
                             </div>
-                            <p class="bio">Referência em dermatologia clínica e estética. Membro da Sociedade Brasileira de Dermatologia com especializações internacionais.</p>
+                            
+                            <p class="bio">
+                                Doutor em Psiquiatria e Ciências do Comportamento (UFRGS) com formação pelo HCPA. Especialista em Psiquiatria Intervencionista pelo SIN/EMT (IPq-USP).
+                            </p>
+
+                            <a href="https://wa.me/55NUMERODOWHATS" target="_blank" onclick="event.stopPropagation()" style="display: inline-flex; align-items: center; color: #25D366; text-decoration: none; font-weight: bold; gap: 8px; margin-top: 15px;">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px;"> 
+                                Agendar Consulta
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="doctor-card" onclick="toggleDoctor(this)">
-                <div class="card-image-wrapper">
-                    <img src="assets/medico3.png" alt="Dr. Fernando Souza">
-                    <div class="gradient-overlay"></div>
-                    <div class="hover-btn"><span>Ver Perfil</span></div>
-                    <div class="doctor-info">
-                        <span class="title">Ortopedista</span>
-                        <h3>Dr. Fernando Souza</h3>
-                        <p class="subtitle">CRM 34567 · 25 anos de exp.</p>
-                    </div>
-                </div>
-                <div class="doctor-details">
-                    <div class="details-content">
-                        <div class="details-inner">
-                            <button class="close-btn" onclick="closeDoctor(event, this)">✕</button>
-                            <span class="details-title">ESPECIALIZAÇÕES</span>
-                            <div class="specialties">
-                                <span class="tag">🦴 Ortopedia</span>
-                                <span class="tag">🏃 Medicina Esportiva</span>
-                                <span class="tag">🦵 Cirurgia do Joelho</span>
-                            </div>
-                            <p class="bio">Ortopedista com vasta experiência em medicina esportiva. Médico de equipes profissionais e atletas olímpicos.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="doctor-card" onclick="toggleDoctor(this)">
-                <div class="card-image-wrapper">
-                    <img src="assets/medico4.png" alt="Dra. Beatriz Lima">
-                    <div class="gradient-overlay"></div>
-                    <div class="hover-btn"><span>Ver Perfil</span></div>
-                    <div class="doctor-info">
-                        <span class="title">Neurologista</span>
-                        <h3>Dra. Beatriz Lima</h3>
-                        <p class="subtitle">CRM 45678 · 18 anos de exp.</p>
-                    </div>
-                </div>
-                <div class="doctor-details">
-                    <div class="details-content">
-                        <div class="details-inner">
-                            <button class="close-btn" onclick="closeDoctor(event, this)">✕</button>
-                            <span class="details-title">ESPECIALIZAÇÕES</span>
-                            <div class="specialties">
-                                <span class="tag">🧠 Neurologia</span>
-                                <span class="tag">🔬 Neurocirurgia</span>
-                                <span class="tag">💊 Dor Crônica</span>
-                            </div>
-                            <p class="bio">Neurologista com sub-especialização em dor crônica e doenças neurodegenerativas. Pesquisadora com publicações internacionais.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+            </div> </div>
     </section>
 
     <script src="js/animations.js"></script>
